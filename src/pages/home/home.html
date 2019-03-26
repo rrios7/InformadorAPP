@@ -1,19 +1,20 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <ion-card *ngFor="let casa of casas">
-    <!-- {{ nombre | json }} -->
-    <img *ngIf="casa.ad.hasOwnProperty('thumbnail')" src='https:://img.segundamano.mx/medium/{{casa.ad.thumbnail.path}}'>
-    <ion-card-header *ngIf="casa.ad.hasOwnProperty('list_price')">
-      {{casa.ad.list_price.label}}
-    </ion-card-header>
-    <ion-card-content>
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+    <ion-navbar>
+      <ion-title>
+        Casas
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-card *ngFor="let casa of casas">
+      <!-- {{ nombre | json }} -->
+      <img *ngIf="casa.ad.hasOwnProperty('thumbnail')" src='https://img.segundamano.mx/medium/{{casa.ad.thumbnail.path}}'>
+      <ion-card-header *ngIf="casa.ad.hasOwnProperty('list_price')">
+        {{ casa.ad.list_price.label }}
+      </ion-card-header>
+      <ion-card-content>
+  
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
