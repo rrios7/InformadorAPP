@@ -16,4 +16,21 @@
         <img src="https://img.segundamano.mx/medium/{{ imagen.path }} ">
       </ion-slide>
     </ion-slides>
+    
+    <ion-card *ngIf="casa.ad.hasOwnProperty('ad_details')">
+      <ion-card-content>
+        <h2>Tipo: {{ casa.ad.ad_details.estate_type.single.label }}</h2>
+        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('lot_area')">Terreno: {{ casa.ad.ad_details.lot_area.single.label }}</h2>
+        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('size')">Construcción: {{ casa.ad.ad_details.size.single.label }}</h2>
+        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('rooms')">Cuartos: {{ casa.ad.ad_details.rooms.single.label }}</h2>
+        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('bathrooms')">Baños: {{ casa.ad.ad_details.bathrooms.single.label }}</h2>
+        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('parking_lots')">Estacionamiento: {{ casa.ad.ad_details.parking_lots.single.label }}</h2>
+        <br>
+        <h2 *ngIf="casa.ad.hasOwnProperty('body')">
+          Descripcion:
+          <br>
+          <p>{{ casa.ad.body }}</p>
+        </h2>
+      </ion-card-content>
+    </ion-card>
 </ion-content>
