@@ -16,11 +16,9 @@ export class HomePage {
   constructor(public navCtrl: NavController, 
     public http: HttpClient) {
 
-      this.http.get('/v1/klfst?&category=1040&region=16&lang=es&lim=15')
+      this.http.get('/v1/casas')
       .subscribe( data => {
-        
-        this.casas = data['list_ads'];
-        //console.log(JSON.stringify(this.casas));
+        this.casas = data['lista'];
       }, error => {
         console.log(JSON.stringify(error));
       });

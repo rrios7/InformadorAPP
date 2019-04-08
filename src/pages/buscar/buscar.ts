@@ -32,7 +32,7 @@ export class BuscarPage {
     let municipio = ev.target.value.toLowerCase();
 
     this.casas = this.lista.filter(casas => {
-      return casas.ad.locations[0].locations[0].label.toLowerCase().includes(municipio);
+      return casas.municipio.toLowerCase().includes(municipio);
     });
     console.log(JSON.stringify(this.casas));
   }

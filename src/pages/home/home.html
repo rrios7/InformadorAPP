@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
       <ion-title>
-        Casas
+        Informador
       </ion-title>
       <ion-buttons end>
         <button ion-button icon-only (click)="search()">
@@ -13,13 +13,11 @@
   
   <ion-content padding>
     <ion-card *ngFor="let casa of casas" (click)="info(casa)">
-      <!-- {{ nombre | json }} -->
-      <img *ngIf="casa.ad.hasOwnProperty('thumbnail')" src='https://img.segundamano.mx/medium/{{casa.ad.thumbnail.path}}'>
-      <ion-card-header *ngIf="casa.ad.hasOwnProperty('list_price')">
-        {{ casa.ad.list_price.label }}
+      <ion-card-header>
+        <h2>{{ casa.titulo }}</h2>
       </ion-card-header>
-      <ion-card-content *ngIf="casa.ad.hasOwnProperty('subject')">
-        {{ casa.ad.subject }}
+      <ion-card-content>
+        <p>{{ casa.precio }}</p>
       </ion-card-content>
     </ion-card>
   </ion-content>

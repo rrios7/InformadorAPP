@@ -11,25 +11,25 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-slides pager>
-      <ion-slide *ngFor="let imagen of casa.ad.images">
-        <img src="https://img.segundamano.mx/medium/{{ imagen.path }} ">
-      </ion-slide>
-    </ion-slides>
-    
-    <ion-card *ngIf="casa.ad.hasOwnProperty('ad_details')">
+    <ion-card>
       <ion-card-content>
-        <h2>Tipo: {{ casa.ad.ad_details.estate_type.single.label }}</h2>
-        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('lot_area')">Terreno: {{ casa.ad.ad_details.lot_area.single.label }}</h2>
-        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('size')">Construcción: {{ casa.ad.ad_details.size.single.label }}</h2>
-        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('rooms')">Cuartos: {{ casa.ad.ad_details.rooms.single.label }}</h2>
-        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('bathrooms')">Baños: {{ casa.ad.ad_details.bathrooms.single.label }}</h2>
-        <h2 *ngIf="casa.ad.ad_details.hasOwnProperty('parking_lots')">Estacionamiento: {{ casa.ad.ad_details.parking_lots.single.label }}</h2>
+        <h2>Tipo: {{ casa.tipo }}</h2>
+        <h2>Ubicación: {{ casa.colonia }}, {{ casa.municipio }}</h2>
+        <h2 *ngIf="casa.m2 != '0'">Terreno: {{ casa.m2 }}</h2>
+        <h2 *ngIf="casa.m2 == '0'">Terreno: N/A</h2>
+        <h2 *ngIf="casa.m2_2 != '0'">Construcción: {{ casa.m2_2}}</h2>
+        <h2 *ngIf="casa.m2_2 == '0'">Construcción: N/A</h2>
+        <h2 *ngIf="casa.rooms != '0'">Cuartos: {{ casa.rooms }}</h2>
+        <h2 *ngIf="casa.rooms == '0'">Cuartos: N/A</h2>
+        <h2 *ngIf="casa.baths != '0'">Baños: {{ casa.baths }}</h2>
+        <h2 *ngIf="casa.baths == '0'">Baños: N/A</h2>
+        <h2 *ngIf="casa.cars != '0'">Estacionamiento: {{ casa.cars }}</h2>
+        <h2 *ngIf="casa.cars == '0'">Estacionamiento: N/A</h2>
         <br>
-        <h2 *ngIf="casa.ad.hasOwnProperty('body')">
+        <h2>
           Descripcion:
           <br>
-          <p>{{ casa.ad.body }}</p>
+          <p>{{ casa.descripcion }}</p>
         </h2>
       </ion-card-content>
     </ion-card>

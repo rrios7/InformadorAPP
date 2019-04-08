@@ -17,11 +17,9 @@ export class InfoPage {
 casa = {};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.casa = this.navParams.get('casa');
-    //console.log(JSON.stringify(this.casa));
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoPage');
   }
-
 }
